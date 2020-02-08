@@ -1,7 +1,12 @@
 ---
 title: post 1
 slug: post-1-slug
+date: 2020-02-06
+tags: 
+  - tag1
+  - tag2
 ---
+
 # Caput avus pariter probat formatus quattuor hace 
 
 ## Naturae superasse imagine    
@@ -9,7 +14,9 @@ slug: post-1-slug
 aLorem markdownum fecit: oscula partim, laevaque, cum sedit obiectat Cressa ante
 in sunt, pertimuit, contingere. Mecum sanguine Baccheaque cum **Parnasos** longe
 vicibus et **nostri antra**, cum audiat humum gravitate Gorgonis ignavis
-Circaea? Ad cycnis regentis Cerastae vulneribus maximus quod, gaudet mediis
+Circaea?
+---
+Ad cycnis regentis Cerastae vulneribus maximus quod, gaudet mediis
 adpellare rabies, incurvae, viri fuit! Ego navigiis senis ruitque Euboicas;
 barbaque me dei non faciunt. **Tibi resurgere primum** Cepheus Tyrrhenaque
 incidit, cognovi pronus exstructas viribus luce.

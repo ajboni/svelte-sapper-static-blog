@@ -8,20 +8,28 @@ import config from 'sapper/config/rollup.js';
 import pkg from './package.json';
 import yaml from '@rollup/plugin-yaml';
 import fs from 'fs';
-
+import postcss from 'rollup-plugin-postcss';
 
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
 const legacy = !!process.env.SAPPER_LEGACY_BUILD;
 
 const onwarn = (warning, onwarn) => (warning.code === 'CIRCULAR_DEPENDENCY' && /[/\\]@sapper[/\\]/.test(warning.message)) || onwarn(warning);
+const purgecss = require('@fullhuman/postcss-purgecss')({
+	// Specify the paths to all of the template files in your project
+	content: ['./src/**/*.html', './src/**/*.svelte', './src/**/*.css'],
+
+	// Include any special characters you're using in this regular expression
+	defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || []
+});
+
+
 
 export default {
 	client: {
 		input: config.client.input(),
 		output: config.client.output(),
 		plugins: [
-
 			{
 				buildStart() {
 					const files = fs.readdirSync('./static/posts/');
@@ -45,6 +53,21 @@ export default {
 				dedupe: ['svelte']
 			}),
 			commonjs(),
+			postcss({
+				extract: './static/global.css',
+				plugins: [
+					require('postcss-import'),
+					require('tailwindcss'), // See tailwind.config.js
+					require('autoprefixer'),
+					require('postcss-fail-on-warn'),
+					// Do not purge the CSS in dev mode to be able to play with classes in the browser dev-tools.
+					!dev && purgecss,
+					!dev &&
+					require('cssnano')({
+						preset: 'default'
+					})
+				].filter(Boolean)
+			}),
 			yaml(),
 			legacy && babel({
 				extensions: ['.js', '.mjs', '.html', '.svelte'],
@@ -83,6 +106,7 @@ export default {
 				generate: 'ssr',
 				dev
 			}),
+
 			resolve({
 				dedupe: ['svelte']
 			}),

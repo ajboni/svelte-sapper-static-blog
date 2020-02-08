@@ -15,8 +15,9 @@ let posts = [];
 let postsFile = fs.readdirSync('./static/posts/');
 postsFile.forEach(postFile => {
 	const fileContents = fs.readFileSync('./static/posts/' + postFile, 'utf8');
-	const matterPost = matter(fileContents);
+	const matterPost = matter(fileContents, { excerpt: true });
 	matterPost.content = marked(matterPost.content)
+	matterPost.excerpt = marked(matterPost.excerpt)
 	posts.push(matterPost);
 });
 // posts.forEach(post => {
