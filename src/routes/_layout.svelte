@@ -1,11 +1,16 @@
 <script>
-  import Nav from "../components/Nav.svelte";
-
-  export let segment;
+  import Sidebar from "./_sidebar.svelte";
 </script>
 
-<Nav {segment} />
+<div class="min-h-screen md:flex">
+  <!-- intermediary wrapper -->
+  <div class="flex-none w-full md:max-w-xs bg-orange-400 text-white">
+    <!-- sidebar -->
+    <Sidebar />
+  </div>
 
-<main class="container mx-auto my-8">
-  <slot />
-</main>
+  <!-- non-sidebar -->
+  <main class="flex-1 p-4 bg-green-100">
+    <slot />
+  </main>
+</div>

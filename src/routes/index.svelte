@@ -1,34 +1,18 @@
-<script context="module">
-  import PostListView from "./_postListView.svelte";
-
-  export function preload({ params, query }) {
-    return this.fetch(`index.json`)
-      .then(r => r.json())
-      .then(posts => {
-        return { posts };
-      });
-  }
-</script>
-
 <script>
-  export let posts;
+  import { onMount } from "svelte";
+  import { posts, fetchPosts, tagFilter } from "../store.js";
+  import PostList from "./_postList.svelte";
+  import Spinner from "./_spinner.svelte";
 </script>
 
 <svelte:head>
   <title>Blog</title>
 </svelte:head>
 
-<div class="text-3xl">Recent posts</div>
-
-<ul>
-  {#each posts as post}
-    <!-- we're using the non-standard `rel=prefetch` attribute to
-				tell Sapper to load the data for the page as soon as
-				the user hovers over the link or taps it, instead of
-				waiting for the 'click' event -->
-    <li>
-      <PostListView {post} />
-
-    </li>
-  {/each}
-</ul>
+{#await fetchPosts($tagFilter)}
+  <Spinner caption="Loading posts..." />
+{:then value}
+  <PostList />
+{:catch error}
+  <p>Something went wrong: {error.message}</p>
+{/await}

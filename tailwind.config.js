@@ -5,7 +5,11 @@ const colors = {
 
 module.exports = {
 	theme: {
-
+		// textColor: {
+		// 	'primary': '#ff3e00',
+		// 	'secondary': '#ffed4a',
+		// 	'danger': '#e3342f',
+		// },
 		container: {
 			center: true,
 			padding: '2rem'

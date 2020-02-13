@@ -1,7 +1,7 @@
 ---
-title: post 2
-slug: post-2-slug
-date: 2020-02-06
+title: post 4
+slug: post-4-slug
+date: 2020-02-11
 tags: 
   - tag1
   - tag2

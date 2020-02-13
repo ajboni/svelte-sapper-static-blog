@@ -5,12 +5,8 @@
 import fs from 'fs';
 import marked from 'marked';
 const matter = require('gray-matter');
-let posts = [];
-
-
-// import path from 'path';
-// import marked from 'marked';
-// import yaml from 'js-yaml';
+export let posts = [];
+export let tags = [];
 
 let postsFile = fs.readdirSync('./static/posts/');
 postsFile.forEach(postFile => {
@@ -20,8 +16,19 @@ postsFile.forEach(postFile => {
 	matterPost.excerpt = marked(matterPost.excerpt)
 	posts.push(matterPost);
 });
-// posts.forEach(post => {
-// 	post.html = post.html.replace(/^\t{3}/gm, '');
-// });
 
-export default posts;
+// Get tag list
+tags = flatten(posts.map(a => {
+	const arrays = a.data.tags;
+	return arrays;
+	// return Array.from(new Set([].concat(...arr)));
+}));
+
+// Leave only unique tags
+tags = tags.filter((v, i, a) => a.indexOf(v) === i);
+
+function flatten(arr) {
+	return arr.reduce(function (flat, toFlatten) {
+		return flat.concat(Array.isArray(toFlatten) ? flatten(toFlatten) : toFlatten);
+	}, []);
+}
