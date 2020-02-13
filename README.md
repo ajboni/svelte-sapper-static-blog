@@ -2,6 +2,8 @@
 
 This blog is Based on https://github.com/sveltejs/sapper-template
 
+It features an exportable static blog with tag filtering.
+
 ### Running the project
 
 However you get the code, you can install dependencies and run the project in development mode with:
