@@ -1,11 +1,14 @@
 <script>
   import PostListView from "./_postListView.svelte";
-  import { posts } from "../store.js";
-  console.log($posts);
+  import { posts, tagFilter } from "../store.js";
+  console.log($tagFilter);
 </script>
 
 <!-- <div class="max-w-full"> -->
-<div class="text-4xl text-center pb-4">Recent Posts</div>
+<div class="text-4xl pb-8 text-center font-medium">
+  Recent Posts {$tagFilter.tag ? 'by ' + $tagFilter.tag : ''}
+</div>
+
 <ul>
   {#each $posts as post}
     <li>

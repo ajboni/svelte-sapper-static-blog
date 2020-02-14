@@ -12,3 +12,4 @@ export async function fetchPosts(params) {
 	posts.set(json.contents);
 	tags.set(json.tags)
 }
+

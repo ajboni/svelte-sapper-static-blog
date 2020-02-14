@@ -5,19 +5,51 @@
   function filterByTag(tag) {
     tagFilter.set({ tag: tag });
   }
+
+  function clearTagFilter() {
+    tagFilter.set({});
+  }
+  const sidebarBtnClass = "w-full text-center p-2 hover:bg-purple-500 ";
 </script>
 
-<div class="flex flex-row sm:flex-col ">
+<div
+  class="flex flex-row sm:flex-col items-center flex-grow h-full justify-center
+  text-2xl">
 
-  <div class="">
-    <a rel="prefetch" class:selected={segment === undefined} href=".">home</a>
-  </div>
-  <div class="">
-    <a class:selected={segment === 'about'} href="about">about</a>
+  <a
+    class={sidebarBtnClass + ' ' + (segment === undefined ? 'bg-purple-500' : '')}
+    rel="prefetch"
+    href=".">
+    Home
+  </a>
+
+  <a
+    class={sidebarBtnClass + ' ' + (segment === 'about' ? 'bg-purple-500' : '')}
+    href="about">
+    About
+  </a>
+
+  <div
+    class={'flex w-4/6 justify-around flex-wrap ' + ' ' + (segment === undefined ? '' : 'invisible')}>
+
+    <!-- If we have at least 2 tags, add option to remove filter -->
+    {#if $tags.length > 2}
+      <div
+        on:click={clearTagFilter}
+        class="text-sm bg-purple-600 mx-1 my-1 text-white px-2 py-1 text-sm
+        rounded-sm cursor-pointer">
+        clear
+      </div>
+    {/if}
+
+    {#each $tags as tag}
+      <div
+        on:click={filterByTag(tag)}
+        class="text-sm bg-purple-600 text-white mx-1 my-1 px-2 py-1 text-sm
+        rounded-sm cursor-pointer">
+        {tag}
+      </div>
+    {/each}
   </div>
 
-  <div class="">TagList</div>
-  {#each $tags as tag}
-    <div on:click={filterByTag(tag)} class="">{tag}</div>
-  {/each}
 </div>

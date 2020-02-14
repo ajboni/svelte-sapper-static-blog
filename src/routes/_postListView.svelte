@@ -9,7 +9,9 @@
   }
 </script>
 
-<div class="flex flex-col mb-10 border-2 rounded-md py-8 shadow-lg px-16">
+<div
+  class=" bg-gray-100 flex flex-col mb-10 border-2 rounded-md py-8 shadow-lg
+  px-16 text-lg leading-relaxed">
   <a class="text-3xl" rel="prefetch" href={post.data.slug}>{post.data.title}</a>
 
   <div>
