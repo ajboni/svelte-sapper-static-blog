@@ -1,16 +1,18 @@
 <script context="module">
-  import { posts, tags } from "../store.js";
+  import { posts, tags, pageInfo, tagFilter } from "../store.js";
+  import { get } from "svelte/store";
   export async function preload(page, session) {
     const res = await this.fetch("index.json");
     const json = await res.json();
     posts.set(json.contents);
     tags.set(json.tags);
-    return tags;
+    pageInfo.set(page);
+    return res;
   }
 </script>
 
 <script>
-  import { fetchPosts, tagFilter } from "../store.js";
+  // import { tagFilter } from "../store.js";
   import PostList from "./_postList.svelte";
   import Spinner from "./_spinner.svelte";
 </script>

@@ -1,6 +1,7 @@
 <script>
   export let segment;
-  import { tags, tagFilter } from "../store.js";
+  import { tags, tagFilter, fetchPosts } from "../store.js";
+  import { preload } from "./index.svelte";
 
   function filterByTag(tag) {
     tagFilter.set({ tag: tag });
