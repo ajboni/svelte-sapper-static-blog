@@ -25,13 +25,6 @@ tags:
   - tag1### Running the project
 
 However you get the code, you can install dependencies and run the project in development mode with:
-
-```bash
-cd my-app
-npm install 
-npm run dev
-```
-
 ---
 # Caput avus pariter probat formatus quattuor hace 
 
