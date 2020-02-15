@@ -7,10 +7,12 @@ export function get(req, res) {
 		'Content-Type': 'application/json'
 	});
 
-	if (req.query.tag) {
-		console.log("Filter by tag")
-		processedPosts = filterByTag(posts, req.query.tag)
-	}
+	// console.log(req.query.tag)
+	// if (req.query.tag) {
+	// 	console.log("Filter by tag: " + req.query.tag)
+	// 	processedPosts = filterByTag(posts, req.query.tag)
+	// }
+
 
 	const sortedPosts = processedPosts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
 
@@ -28,9 +30,3 @@ export function get(req, res) {
 	res.end(JSON.stringify(result));
 }
 
-function filterByTag(arr, tag) {
-	console.log(tag)
-	arr = arr.filter(a => a.data.tags.includes(tag))
-	console.log(arr)
-	return arr
-}

@@ -1,6 +1,6 @@
 {
-	"name": "TODO",
-	"description": "TODO",
+	"name": "svelte-sapper-static-blog",
+	"description": "Static blog powered by svelte, sapper, tailwindcss ",
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "sapper dev",

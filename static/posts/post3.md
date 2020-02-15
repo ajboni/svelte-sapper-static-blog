@@ -1,10 +1,17 @@
 ---
 title: post 3
 slug: post-3-slug
-date: 2020-02-01
+date: 2020-02-06
+author:
+  name: "ajboni"
+	links:
+    - url: "https://github.com/ajboni/"
+      icon: "fab fa-github"
+    - url: "https://aboni.dev/"
+      icon: "fab fa-mozilla"
 tags: 
-  - tag3
-  - tag4
+  - tag1
+  - tag2
 ---
 Ad cycnis regentis Cerastae vulneribus maximus quod, gaudet mediis
 adpellare rabies, incurvae, viri fuit! Ego navigiis senis ruitque Euboicas;

@@ -3,17 +3,16 @@
   export let segment;
 </script>
 
-<div class="min-h-screen md:flex">
+<div class="min-h-screen md:flex bg-gray-800">
   <!-- intermediary wrapper -->
   <div
-    class="md:h-screen md:top-0 md:sticky flex-none w-full md:max-w-xs
-    bg-gray-800 text-white ">
+    class="md:h-screen lg:top-0 lg:sticky flex-none w-full md:w-64 text-white ">
     <!-- sidebar -->
     <Sidebar {segment} />
   </div>
 
   <!-- non-sidebar -->
-  <main class="flex-1 p-8 bg-gray-300">
+  <main class="flex-1 bg-gray-300 sm:p-0 md:p-8 lg:p-8">
     <slot />
   </main>
 </div>

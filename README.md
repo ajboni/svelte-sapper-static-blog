@@ -1,6 +1,6 @@
 # WIP!
 
-A static blog based on https://github.com/sveltejs/sapper-template
+A responsive static blog based on https://github.com/sveltejs/sapper-template
 
 Features:
 - svelte + sapper + tailwindcss

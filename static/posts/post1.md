@@ -2,6 +2,13 @@
 title: post 1
 slug: post-1-slug
 date: 2020-02-06
+author:
+  name: "ajboni"
+  links:
+    - url: "https://github.com/ajboni/"
+      icon: "fab fa-github"
+    - url: "https://aboni.dev/"
+      icon: "fab fa-mozilla"
 tags: 
   - tag1
   - tag2

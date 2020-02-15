@@ -1,8 +1,7 @@
 <script>
   export let segment;
-  import { tags, tagFilter, fetchPosts } from "../store.js";
-  import { preload } from "./index.svelte";
-
+  import { tags, tagFilter } from "../store.js";
+  import { goto } from "@sapper/app";
   function filterByTag(tag) {
     tagFilter.set({ tag: tag });
   }
@@ -10,16 +9,16 @@
   function clearTagFilter() {
     tagFilter.set({});
   }
-  const sidebarBtnClass = "w-full text-center p-2 hover:bg-purple-500 ";
+  const sidebarBtnClass =
+    "w-1/4 sm:w-full text-center p-2 hover:bg-purple-500 ";
 </script>
 
 <div
-  class="flex flex-row sm:flex-col items-center flex-grow h-full justify-center
-  text-2xl">
+  class="flex flex-row sm:flex-col items-center flex-grow h-full justify-start
+  sm:justify-center text-2xl">
 
   <a
     class={sidebarBtnClass + ' ' + (segment === undefined ? 'bg-purple-500' : '')}
-    rel="prefetch"
     href=".">
     Home
   </a>
@@ -31,25 +30,25 @@
   </a>
 
   <div
-    class={'flex w-4/6 justify-around flex-wrap ' + ' ' + (segment === undefined ? '' : 'invisible')}>
+    class={'hidden sm:flex w-full my-2 sm:w-4/6 justify-center flex-wrap ' + ' '}>
 
     <!-- If we have at least 2 tags, add option to remove filter -->
     {#if $tags.length > 2}
-      <div
-        on:click={clearTagFilter}
-        class="text-sm bg-purple-600 mx-1 my-1 text-white px-2 py-1 text-sm
-        rounded-sm cursor-pointer">
-        clear
-      </div>
+      <a
+        class="text-sm bg-purple-600 text-white mx-1 my-1 px-2 py-1 text-sm
+        rounded-sm cursor-pointer"
+        href="/">
+        all
+      </a>
     {/if}
 
     {#each $tags as tag}
-      <div
-        on:click={filterByTag(tag)}
+      <a
         class="text-sm bg-purple-600 text-white mx-1 my-1 px-2 py-1 text-sm
-        rounded-sm cursor-pointer">
+        rounded-sm cursor-pointer"
+        href="/?tag={tag}">
         {tag}
-      </div>
+      </a>
     {/each}
   </div>
 
