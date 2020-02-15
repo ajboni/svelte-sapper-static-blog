@@ -22,9 +22,8 @@ Post are markdown files parsed with [gray-matter](https://github.com/jonschlinke
 title: post 1
 slug: post-1-slug
 tags: 
-  - tag1### Running the project
-
-However you get the code, you can install dependencies and run the project in development mode with:
+  - tag1
+  - tag2
 ---
 # Caput avus pariter probat formatus quattuor hace 
 
