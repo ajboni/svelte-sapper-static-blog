@@ -1,4 +1,4 @@
-import { _ as _inherits, a as _classCallCheck, b as _possibleConstructorReturn, c as _getPrototypeOf, i as init, s as safe_not_equal, d as _assertThisInitialized, e as dispatch_dev, S as SvelteComponentDev, w as space, g as element, t as text, R as query_selector_all, l as detach_dev, x as claim_space, h as claim_element, j as children, k as claim_text, n as add_location, o as insert_dev, p as append_dev, q as noop } from './client.1fc2b64e.js';
+import { _ as _inherits, a as _classCallCheck, b as _possibleConstructorReturn, c as _getPrototypeOf, i as init, s as safe_not_equal, d as _assertThisInitialized, e as dispatch_dev, S as SvelteComponentDev, w as space, g as element, t as text, R as query_selector_all, l as detach_dev, x as claim_space, h as claim_element, j as children, k as claim_text, n as add_location, o as insert_dev, p as append_dev, q as noop } from './client.ea9f43b5.js';
 
 var file = "src/routes/about.svelte";
 

@@ -1,4 +1,4 @@
-import { _ as _inherits, a as _classCallCheck, b as _possibleConstructorReturn, c as _getPrototypeOf, i as init, s as safe_not_equal, d as _assertThisInitialized, e as dispatch_dev, f as _createClass, S as SvelteComponentDev, g as element, t as text, h as claim_element, j as children, k as claim_text, l as detach_dev, m as attr_dev, n as add_location, o as insert_dev, p as append_dev, q as noop, r as set_data_dev, u as empty, v as destroy_each, w as space, x as claim_space, y as _slicedToArray } from './client.1fc2b64e.js';
+import { _ as _inherits, a as _classCallCheck, b as _possibleConstructorReturn, c as _getPrototypeOf, i as init, s as safe_not_equal, d as _assertThisInitialized, e as dispatch_dev, f as _createClass, S as SvelteComponentDev, g as element, t as text, h as claim_element, j as children, k as claim_text, l as detach_dev, m as attr_dev, n as add_location, o as insert_dev, p as append_dev, q as noop, r as set_data_dev, u as empty, v as destroy_each, w as space, x as claim_space, y as _slicedToArray } from './client.ea9f43b5.js';
 
 var file = "src/routes/_postInfo.svelte";
 
@@ -38,7 +38,7 @@ function create_each_block_1(ctx) {
     },
     h: function hydrate() {
       attr_dev(span, "class", "text-sm bg-purple-600 text-white p-1 mr-1 text-sm rounded-sm");
-      add_location(span, file, 12, 4, 334);
+      add_location(span, file, 12, 4, 358);
     },
     m: function mount(target, anchor) {
       insert_dev(target, span, anchor);
@@ -83,7 +83,7 @@ function create_if_block_1(ctx) {
     },
     h: function hydrate() {
       attr_dev(span, "class", "text-sm ");
-      add_location(span, file, 18, 4, 499);
+      add_location(span, file, 18, 4, 523);
     },
     m: function mount(target, anchor) {
       insert_dev(target, span, anchor);
@@ -223,13 +223,13 @@ function create_each_block(ctx) {
       attr_dev(i, "class", i_class_value =
       /*link*/
       ctx[4].icon);
-      add_location(i, file, 24, 8, 716);
+      add_location(i, file, 24, 8, 740);
       attr_dev(a, "href", a_href_value =
       /*link*/
       ctx[4].url);
       attr_dev(a, "target", "__blank");
       attr_dev(a, "class", "");
-      add_location(a, file, 23, 6, 662);
+      add_location(a, file, 23, 6, 686);
     },
     m: function mount(target, anchor) {
       insert_dev(target, a, anchor);
@@ -348,11 +348,11 @@ function create_fragment(ctx) {
     },
     h: function hydrate() {
       attr_dev(span, "class", "text-sm");
-      add_location(span, file, 29, 2, 777);
+      add_location(span, file, 29, 2, 801);
       attr_dev(hr, "class", "mb-8 mt-4");
-      add_location(hr, file, 30, 2, 820);
+      add_location(hr, file, 30, 2, 844);
       attr_dev(div, "class", "text-gray-600");
-      add_location(div, file, 10, 0, 280);
+      add_location(div, file, 10, 0, 304);
     },
     m: function mount(target, anchor) {
       insert_dev(target, div, anchor);
@@ -465,7 +465,7 @@ function isValidDate(d) {
 function instance($$self, $$props, $$invalidate) {
   var post = $$props.post;
   var date = post.data.date ? new Date(post.data.date) : null;
-  var tags = post.data.tags;
+  var tags = post.data.tags ? post.data.tags : null;
   var shortDate = isValidDate(date) ? date.toLocaleDateString() : "";
   var writable_props = ["post"];
   Object.keys($$props).forEach(function (key) {

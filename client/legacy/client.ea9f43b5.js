@@ -3137,19 +3137,19 @@ function (_SvelteComponentDev) {
 var ignore = [/^\/index.json$/, /^\/([^\/]+?).json$/];
 var components = [{
   js: function js() {
-    return import('./index.5174f254.js');
+    return import('./index.8b6f889c.js');
   },
-  css: ["legacy/client.1fc2b64e.css"]
+  css: ["legacy/client.ea9f43b5.css"]
 }, {
   js: function js() {
-    return import('./about.7360b1db.js');
+    return import('./about.36e15e18.js');
   },
-  css: ["legacy/client.1fc2b64e.css"]
+  css: ["legacy/client.ea9f43b5.css"]
 }, {
   js: function js() {
-    return import('./[slug].043ebaa2.js');
+    return import('./[slug].de65abb6.js');
   },
-  css: ["legacy/[slug].043ebaa2.css","legacy/client.1fc2b64e.css"]
+  css: ["legacy/[slug].de65abb6.css","legacy/client.ea9f43b5.css"]
 }];
 var routes = function (d) {
   return [{
