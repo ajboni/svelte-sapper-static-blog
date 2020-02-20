@@ -1,5 +1,5 @@
-import { M as _asyncToGenerator, N as _regeneratorRuntime, _ as _inherits, a as _classCallCheck, b as _possibleConstructorReturn, c as _getPrototypeOf, i as init, s as safe_not_equal, d as _assertThisInitialized, e as dispatch_dev, f as _createClass, S as SvelteComponentDev, w as space, g as element, t as text, z as create_component, R as query_selector_all, l as detach_dev, x as claim_space, h as claim_element, j as children, k as claim_text, A as claim_component, m as attr_dev, n as add_location, o as insert_dev, p as append_dev, B as mount_component, y as _slicedToArray, r as set_data_dev, C as transition_in, D as transition_out, E as destroy_component } from './client.ea9f43b5.js';
-import { P as PostInfo } from './_postInfo.fb7592bf.js';
+import { M as _asyncToGenerator, N as _regeneratorRuntime, _ as _inherits, a as _classCallCheck, b as _possibleConstructorReturn, c as _getPrototypeOf, i as init, s as safe_not_equal, d as _assertThisInitialized, e as dispatch_dev, f as _createClass, S as SvelteComponentDev, w as space, g as element, t as text, z as create_component, R as query_selector_all, l as detach_dev, x as claim_space, h as claim_element, j as children, k as claim_text, A as claim_component, m as attr_dev, n as add_location, o as insert_dev, p as append_dev, B as mount_component, y as _slicedToArray, r as set_data_dev, C as transition_in, D as transition_out, E as destroy_component } from './client.bb269434.js';
+import PostInfo from './postInfo.49e79aec.js';
 
 var file = "src/routes/[slug].svelte";
 
@@ -69,11 +69,11 @@ function create_fragment(ctx) {
     },
     h: function hydrate() {
       attr_dev(h1, "class", "text-4xl font-thin");
-      add_location(h1, file, 47, 2, 1076);
+      add_location(h1, file, 47, 2, 1075);
       attr_dev(div0, "class", "post-content svelte-z75mjw");
-      add_location(div0, file, 49, 2, 1154);
+      add_location(div0, file, 49, 2, 1153);
       attr_dev(div1, "class", " bg-gray-100 flex flex-col border-2 rounded-md shadow-lg px-8 py-8\n  sm:py-16 sm:px-16 text-lg leading-relaxed w-full break-words");
-      add_location(div1, file, 43, 0, 927);
+      add_location(div1, file, 43, 0, 926);
     },
     m: function mount(target, anchor) {
       insert_dev(target, t0, anchor);

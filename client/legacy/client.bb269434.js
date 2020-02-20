@@ -3137,19 +3137,24 @@ function (_SvelteComponentDev) {
 var ignore = [/^\/index.json$/, /^\/([^\/]+?).json$/];
 var components = [{
   js: function js() {
-    return import('./index.8b6f889c.js');
+    return import('./index.d184a90f.js');
   },
-  css: ["legacy/client.ea9f43b5.css"]
+  css: ["legacy/client.bb269434.css"]
 }, {
   js: function js() {
-    return import('./about.36e15e18.js');
+    return import('./postInfo.49e79aec.js');
   },
-  css: ["legacy/client.ea9f43b5.css"]
+  css: ["legacy/client.bb269434.css"]
 }, {
   js: function js() {
-    return import('./[slug].de65abb6.js');
+    return import('./about.b05944ea.js');
   },
-  css: ["legacy/[slug].de65abb6.css","legacy/client.ea9f43b5.css"]
+  css: ["legacy/client.bb269434.css"]
+}, {
+  js: function js() {
+    return import('./[slug].ddfc4204.js');
+  },
+  css: ["legacy/[slug].ddfc4204.css","legacy/client.bb269434.css"]
 }];
 var routes = function (d) {
   return [{
@@ -3159,16 +3164,22 @@ var routes = function (d) {
       i: 0
     }]
   }, {
+    // postInfo.svelte
+    pattern: /^\/postInfo\/?$/,
+    parts: [{
+      i: 1
+    }]
+  }, {
     // about.svelte
     pattern: /^\/about\/?$/,
     parts: [{
-      i: 1
+      i: 2
     }]
   }, {
     // [slug].svelte
     pattern: /^\/([^\/]+?)\/?$/,
     parts: [{
-      i: 2,
+      i: 3,
       params: function params(match) {
         return {
           slug: d(match[1])

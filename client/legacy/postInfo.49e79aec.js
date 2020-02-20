@@ -1,6 +1,6 @@
-import { _ as _inherits, a as _classCallCheck, b as _possibleConstructorReturn, c as _getPrototypeOf, i as init, s as safe_not_equal, d as _assertThisInitialized, e as dispatch_dev, f as _createClass, S as SvelteComponentDev, g as element, t as text, h as claim_element, j as children, k as claim_text, l as detach_dev, m as attr_dev, n as add_location, o as insert_dev, p as append_dev, q as noop, r as set_data_dev, u as empty, v as destroy_each, w as space, x as claim_space, y as _slicedToArray } from './client.ea9f43b5.js';
+import { _ as _inherits, a as _classCallCheck, b as _possibleConstructorReturn, c as _getPrototypeOf, i as init, s as safe_not_equal, d as _assertThisInitialized, e as dispatch_dev, f as _createClass, S as SvelteComponentDev, g as element, t as text, h as claim_element, j as children, k as claim_text, l as detach_dev, m as attr_dev, n as add_location, o as insert_dev, p as append_dev, q as noop, r as set_data_dev, u as empty, v as destroy_each, w as space, x as claim_space, y as _slicedToArray } from './client.bb269434.js';
 
-var file = "src/routes/_postInfo.svelte";
+var file = "src/routes/postInfo.svelte";
 
 function get_each_context(ctx, list, i) {
   var child_ctx = ctx.slice();
@@ -536,4 +536,4 @@ function (_SvelteComponentDev) {
   return PostInfo;
 }(SvelteComponentDev);
 
-export { PostInfo as P };
+export default PostInfo;
