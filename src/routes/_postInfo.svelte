@@ -1,7 +1,7 @@
 <script>
   export let post;
   const date = post.data.date ? new Date(post.data.date) : null;
-  const tags = post.data.tags;
+  const tags = post.data.tags ? post.data.tags : null;
   let shortDate = isValidDate(date) ? date.toLocaleDateString() : "";
   function isValidDate(d) {
     return d instanceof Date && !isNaN(d);
